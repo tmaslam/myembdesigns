@@ -460,3 +460,13 @@ function add_download_links_to_email($order, $sent_to_admin, $plain_text, $email
     }
 }	
 ?>
+/** Fix: Events carousel and logo slider visibility (missing amazingcarousel JS files) */
+add_action('wp_enqueue_scripts', function() {
+    wp_enqueue_script(
+        'myemb-carousel-fix',
+        '/myemb/wp-content/uploads/amazingcarousel-fix/initcarousel.js',
+        array(),
+        '1.0',
+        true // Load in footer
+    );
+});
