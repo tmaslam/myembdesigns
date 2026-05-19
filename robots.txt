@@ -1,0 +1,59 @@
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+sitemap: https://www.myembdesigns.com/sitemap.xml
+
+
+User-agent: *
+Disallow: /
+
+User-agent: Bingbot
+User-agent: Googlebot
+User-agent: Slurp
+Allow: /
+
+Sitemap: https://www.myembdesigns.com/post-sitemap.xml
+
+
+User-agent: *
+Disallow: /
+
+User-agent: Bingbot
+User-agent: Googlebot
+User-agent: Slurp
+Allow: /
+
+Sitemap: http://myembdesigns.com/post-sitemap.xml
+
+
+User-agent: *
+Disallow: /
+
+User-agent: Bingbot
+User-agent: Googlebot
+User-agent: Slurp
+Allow: /
+
+Sitemap: http://www.myembdesigns.com/post-sitemap.xml
+
+
+User-agent: *
+Disallow: /
+
+User-agent: Bingbot
+User-agent: Googlebot
+User-agent: Slurp
+Allow: /
+
+Sitemap: https://myembdesigns.com/post-sitemap.xml
+
+
+User-agent: *
+Disallow: /
+
+User-agent: Bingbot
+User-agent: Googlebot
+User-agent: Slurp
+Allow: /
+
+Sitemap: https://mail.myembdesigns.com/post-sitemap.xml

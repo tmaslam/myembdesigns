@@ -1,0 +1,83 @@
+/*
+ Theme Name:    Electro Child
+ Theme URI:     https://themeforest.net/item/electro-electronics-store-woocommerce-theme/15720624
+ Description:   This is the child theme of Electro
+ Author:        MadrasThemes
+ Author URI:    https://madrasthemes.com/
+ Template:      electro
+ Version:       3.0.3
+ License:       GNU General Public License v2 or later
+ License URI:   http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:          light, dark, two-columns, right-sidebar, responsive-layout
+ Text Domain:   electro-child
+*/
+
+/* Equal height product cards */
+.products > .product .product-inner,
+.owl-item > .product .product-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Square thumbnail area */
+.products > .product .product-thumbnail,
+.owl-item > .product .product-thumbnail {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f8f8;
+    flex: 1 1 auto;
+    min-height: 180px;
+}
+
+/* Force images to fill thumbnail */
+.products > .product .product-thumbnail img,
+.owl-item > .product .product-thumbnail img,
+.products > .product .wp-post-image,
+.owl-item > .product .wp-post-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    margin: auto !important;
+}
+
+/* Push price/cart to bottom */
+.products > .product .price-add-to-cart,
+.owl-item > .product .price-add-to-cart {
+    margin-top: auto;
+    padding-top: 0.5em;
+}
+
+/* Ensure product outer fills column */
+.products > .product .product-outer,
+.owl-item > .product .product-outer {
+    height: 100% !important;
+}
+
+/* Sidebar category widget white text on pink */
+.widget_product_categories ul li > a,
+.widget_product_categories ul li > span,
+.widget_product_categories .product_cat > span,
+.widget_product_categories .category-single .show-all-cat .show-all-cat-dropdown,
+.widget_product_categories .widget-title,
+.sidebar .widget_product_categories .widget-title {
+    color: #ffffff !important;
+}
+.widget_product_categories ul li > a:hover,
+.widget_product_categories ul li > a:focus {
+    color: #ffffff !important;
+}
+
+/* Direct targeting for product-categories list links based on user HTML */
+ul.product-categories li.cat-item > a,
+ul.product-categories li.product_cat > span {
+    color: #ffffff !important;
+}
+ul.product-categories li.cat-item > a:hover,
+ul.product-categories li.cat-item > a:focus {
+    color: #ffffff !important;
+}

@@ -1,0 +1,250 @@
+/*
+ Theme Name:    Electro Child
+ Theme URI:     https://themeforest.net/item/electro-electronics-store-woocommerce-theme/15720624
+ Description:   This is the child theme of Electro
+ Author:        MadrasThemes
+ Author URI:    https://madrasthemes.com/
+ Template:      electro
+ Version:       2.0.9
+ License:       GNU General Public License v2 or later
+ License URI:   http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:          light, dark, two-columns, right-sidebar, responsive-layout
+ Text Domain:   electro-child
+*/
+.woocommerce-MyAccount-navigation ul li a {
+    padding: .857em 0;
+    display: block;
+    color: #333e48;
+    border-bottom: 1px solid #ce1d76;
+    padding: 11px 8px !important;
+}
+.woocommerce-MyAccount-navigation ul li.is-active a {
+    font-weight: 700;
+    background: #ce1d76;
+    color: white;
+    padding: 11px 7px;
+}
+li.woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--dashboard {
+    border-top: 1px solid #ce1d76;
+}
+.mg-wpsi {
+    list-style: none !important;
+    min-height: 0px !important;
+    width: 50%;
+    margin: 0px !important;
+}
+.off-canvas-navigation {
+    background-color: #0791a8 !important;
+}
+.off-canvas-navigation .yamm .yamm-content li a, .off-canvas-navigation ul li a {
+    border-color: white !important;
+}
+#ac-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, .6);
+    z-index: 1001;
+}
+#popup {
+    width: 555px;
+    height: 375px;
+    background: #FFFFFF;
+    border: 5px solid #000;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    box-shadow: #64686e 0px 0px 3px 3px;
+    -moz-box-shadow: #64686e 0px 0px 3px 3px;
+    -webkit-box-shadow: #64686e 0px 0px 3px 3px;
+    position: relative;
+    top: 150px;
+    left: 375px;
+}
+.owl-item>.product .add-to-cart-wrap, .products:not(.electro-v1)>.product .add-to-cart-wrap {
+    display: block !important;
+}
+.footer-logo img.lazyloaded {
+    margin-left: inherit !important;
+}
+.footer-bottom-widgets {
+    background: #f7f7f7 !important;
+}
+
+.myrow ul.nav.nav-inline {
+    background: #fafafa;
+    border: 1px solid #E8E8E8;
+        margin-bottom: 13px;
+          /*  padding: 5px 15px;*/
+              padding-bottom: 0px !important;
+    overflow: hidden;
+}
+@media (min-width: 768px) {
+
+.products-carousel-tabs:not(.electro-v1) .nav {
+    justify-content: inherit !important;
+}
+.header-site-branding img.img-header-logo {
+    margin-left: 42px;
+}	
+}
+.myrow .products-carousel-tabs:not(.electro-v1) .nav::after{
+	 border-bottom: none !important;
+}
+ul.nav.nav-inline li.nav-item a.nav-link.active {
+    background: #00abc5;
+    padding: 13px 45px;
+    color: white;
+     border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+ul.nav.nav-inline li.nav-item a.nav-link::after {
+    border: none;
+}
+ul.nav.nav-inline li.nav-item a.nav-link {
+    padding: 13px 45px !important;
+}
+section.products-carousel-tabs-v5 ul.nav.nav-inline.text-xs-center li.nav-item {
+    display: none;
+}
+section.products-carousel-tabs-v5 {
+    margin-bottom: -88px;
+}
+.electro-compact .header-v3 .masthead, .header-v3 .masthead {
+    padding: 1em 0 !important;
+}
+.footer-bottom-widgets {
+    background-color: white !important;
+}
+.footer-call-us .call-us-number {
+    font-size: 13px !important;
+}
+.footer-call-us .call-us-icon .ec {
+    font-size: 3.643em !important;
+}
+@media (max-width: 767px){
+    
+ul.nav.nav-inline li.nav-item a.nav-link {
+    padding: 13px 10px !important;
+    font-size: 13px;
+}
+.handheld-header-v2 {
+    background: #00c1cfbd !important;
+}
+}
+.woocommerce-loop-product__title {
+    color: #ce1d76 !important;
+}
+
+.product-loop-header span.loop-product-categories {
+    text-align: center;
+    margin-top: -13px;
+}
+input#pdf-button {
+    background: #ce1d76;
+}
+div#tab_background_color_picker {
+    margin-right: 119px;
+    margin-top: 28px;
+        z-index: inherit !important;
+}
+.footer-logo img {
+   /* margin-left: 53px; */
+}
+.topphone {
+    height: 5px;
+    width: 59%;
+    float: left;
+}
+.topphone i.fa.fa-envelope {
+    color: #949a9f;
+    margin-left: 6px;
+}
+.topphone{
+    color: #949a9f;
+}
+.topphone a {
+    color: #949a9f;
+}
+.admin-bar .sticky-wrapper .stick-this.stuck img.img-header-logo {
+    width: 66px;
+}
+.page .entry-header.header-with-cover-image {
+    min-height: 300px !important;
+}
+
+/* Equal height product cards */
+.products>.product .product-inner,
+.owl-item>.product .product-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Square thumbnail area */
+.products>.product .product-thumbnail,
+.owl-item>.product .product-thumbnail {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+    min-height: 180px;
+}
+
+/* Force images to fill thumbnail */
+.products>.product .product-thumbnail img,
+.owl-item>.product .product-thumbnail img,
+.products>.product .wp-post-image,
+.owl-item>.product .wp-post-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    margin: auto !important;
+}
+
+/* Push price/cart to bottom */
+.products>.product .price-add-to-cart,
+.owl-item>.product .price-add-to-cart {
+    margin-top: auto;
+    padding-top: 0.5em;
+}
+
+/* Ensure product outer fills column */
+.products>.product .product-outer,
+.owl-item>.product .product-outer {
+    height: 100% !important;
+}
+/* Top bar right menu white text */
+#menu-top-bar-right.nav li a,
+.top-bar-right .nav li a,
+.top-bar .nav.pull-right li a {
+    color: #ffffff !important;
+}
+#menu-top-bar-right.nav li a:hover,
+#menu-top-bar-right.nav li a:focus {
+    color: #ffffff !important;
+}
+
+/* Sidebar widget white text on pink background */
+.sidebar .widget a,
+.sidebar .widget li > a,
+.sidebar .widget li > span,
+.widget_product_categories ul li > a,
+.widget_product_categories ul li > span,
+.widget_product_categories .product_cat > span,
+.widget_product_categories .category-single .show-all-cat .show-all-cat-dropdown,
+.widget_product_categories .widget-title,
+.sidebar .widget_product_categories .widget-title {
+    color: #ffffff !important;
+}
+.sidebar .widget a:hover,
+.sidebar .widget a:focus,
+.widget_product_categories ul li > a:hover,
+.widget_product_categories ul li > a:focus {
+    color: #ffffff !important;
+}
