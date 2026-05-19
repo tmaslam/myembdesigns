@@ -58,8 +58,8 @@
                 .amazingcarousel-item {
                     float: none !important;
                     flex: 0 0 auto;
-                    margin: 4px 12px !important;
-                    min-width: 110px;
+                    margin: 2px 4px !important;
+                    min-width: 90px;
                     text-align: center;
                 }
                 .amazingcarousel-item-container {
