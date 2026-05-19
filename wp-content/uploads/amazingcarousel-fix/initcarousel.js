@@ -58,21 +58,39 @@
                 .amazingcarousel-item {
                     float: none !important;
                     flex: 0 0 auto;
-                    margin: 4px 8px !important;
+                    margin: 4px 12px !important;
+                    min-width: 110px;
+                    text-align: center;
+                }
+                .amazingcarousel-item-container {
+                    text-align: center;
+                }
+                .amazingcarousel-images {
+                    text-align: center;
+                }
+                .amazingcarousel-images a {
+                    display: inline-block;
+                    text-align: center;
                 }
                 .amazingcarousel-images img {
-                    width: 80px !important;
-                    height: 80px !important;
+                    width: 70px !important;
+                    height: 70px !important;
                     object-fit: contain;
+                    display: inline-block;
+                    margin: 0 auto;
                 }
                 .amazingcarousel-title {
                     text-align: center;
-                    font-size: 12px;
-                    margin-top: 5px;
+                    font-size: 11px;
+                    margin-top: 6px;
+                    line-height: 1.3;
+                    word-wrap: break-word;
                 }
                 .amazingcarousel-title a {
                     color: #333;
                     text-decoration: none;
+                    display: block;
+                    text-align: center;
                 }
             `;
             document.head.appendChild(style);
