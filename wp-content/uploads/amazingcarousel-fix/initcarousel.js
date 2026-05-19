@@ -42,7 +42,7 @@
             style.id = 'amazingcarousel-scroll-css';
             style.textContent = `
                 .amazingcarousel-scroll {
-                    animation: amazingcarousel-scroll 25s linear infinite;
+                    animation: amazingcarousel-scroll 45s linear infinite;
                 }
                 .amazingcarousel-scroll:hover {
                     animation-play-state: paused;
@@ -51,10 +51,14 @@
                     0% { transform: translateX(0); }
                     100% { transform: translateX(-50%); }
                 }
+                .amazingcarousel-list-container {
+                    display: flex;
+                    justify-content: center;
+                }
                 .amazingcarousel-item {
                     float: none !important;
                     flex: 0 0 auto;
-                    margin: 10px !important;
+                    margin: 4px 8px !important;
                 }
                 .amazingcarousel-images img {
                     width: 80px !important;
