@@ -81,3 +81,77 @@ ul.product-categories li.cat-item > a:hover,
 ul.product-categories li.cat-item > a:focus {
     color: #ffffff !important;
 }
+
+/* === FIX: Logo Carousel (Amazing Carousel) === */
+.amazingcarousel-list {
+    margin-left: 0 !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+}
+.amazingcarousel-list-wrapper,
+.amazingcarousel-list-container {
+    overflow: visible !important;
+    width: 100% !important;
+}
+.amazingcarousel-item {
+    float: none !important;
+    flex: 0 0 auto !important;
+    margin: 10px !important;
+}
+.amazingcarousel-images {
+    pointer-events: auto !important;
+}
+.amazingcarousel-images img {
+    width: 80px !important;
+    height: 80px !important;
+    object-fit: contain;
+}
+.amazingcarousel-title {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.amazingcarousel-title a {
+    color: #333;
+    text-decoration: none;
+}
+.amazingcarousel-title a:hover {
+    color: #ce1d76;
+}
+
+/* === FIX: Events Section === */
+#blogCarousel,
+#blogCarousel .container {
+    display: block !important;
+}
+.events-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+.events-grid > div {
+    padding: 10px;
+}
+.events-grid a {
+    display: block;
+    padding: 25px 15px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #ce1d76;
+    font-weight: 600;
+    text-align: center;
+    border: 2px solid #ce1d76;
+    transition: all 0.3s ease;
+    height: 100%;
+    font-size: 14px;
+}
+.events-grid a:hover {
+    background: #ce1d76;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(206,29,118,0.3);
+}
