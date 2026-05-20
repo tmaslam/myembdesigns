@@ -41,12 +41,7 @@ window.onload = function () {
 }
 </script>
 
-<!-- Amazing Carousel -->
-<link rel="stylesheet" href="/myemb/wp-content/uploads/amazingcarousel-fix/mhfontello.css" type="text/css">
-<script type="text/javascript" src="/myemb/wp-content/uploads/amazingcarousel-fix/amazingcarousel.js?ver=1.2"></script>
-<script type="text/javascript" src="/myemb/wp-content/uploads/amazingcarousel-fix/wonderpluginlightbox.js?ver=8.8C"></script>
-<script type="text/javascript" src="/myemb/wp-content/uploads/amazingcarousel-fix/initcarousel.js"></script>
-<!-- /Amazing Carousel -->
+<!-- Amazing Carousel fix loaded via functions.php -->
 
 <style>
 #ac-wrapper {

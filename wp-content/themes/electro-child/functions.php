@@ -143,9 +143,9 @@ add_action('woocommerce_cart_calculate_fees', function() {
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
 function my_theme_enqueue_styles() {
     $parent_style = 'electro-style';
-    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css', array(), wp_get_theme( get_template() )->get( 'Version' ) );
+    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.min.css', array(), wp_get_theme( get_template() )->get( 'Version' ) );
     wp_enqueue_style( 'child-style',
-        get_stylesheet_directory_uri() . '/style.css',
+        get_stylesheet_directory_uri() . '/style.min.css',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
@@ -351,51 +351,56 @@ add_shortcode( 'popupShortcode', 'popup' );
 
 add_filter( 'big_image_size_threshold', '__return_false' );
 
-if ( ! function_exists( 'electro_top_bar' ) ) {
-    function electro_top_bar() {
+/* =====================================================
+ * CUSTOM TOP BAR OVERRIDE (robust: remove parent action + add our own)
+ * ===================================================== */
+function myemb_electro_top_bar() {
 
-        if ( is_page_template( 'template-homepage-v5.php' ) ) {
-            $top_bar_classes = 'top-bar top-bar-v1';
-        } else {
-            $top_bar_classes = 'top-bar';
-        }
-
-        if ( apply_filters( 'electro_enable_top_bar', true ) ) : ?>
-
-        <?php
-
-        if ( has_electro_mobile_header() ) {
-            if ( apply_filters( 'electro_hide_top_bar_in_mobile', true ) ) {
-                $top_bar_classes .= ' hidden-lg-down d-none d-xl-block';
-            }
-        }
-
-        ?>
-
-        <div class="<?php echo esc_attr( $top_bar_classes ); ?>">
-            <div class="container clearfix">
-                <div class="topphone">
-                    <p>
-                        <i class="fa fa-phone" aria-hidden="true"></i> +44 777 888 2231 
-                        <i class="fa fa-envelope" ></i> <a href="mailto:sales@myembdesigns.com" target="_blank">sales@myembdesigns.com</a>
-                    </p>
-                </div>
-            <?php
-                wp_nav_menu( array(
-                    'theme_location'    => 'topbar-right',
-                    'container'         => false,
-                    'depth'             => 2,
-                    'menu_class'        => 'nav nav-inline pull-right electro-animate-dropdown flip',
-                    'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                    'walker'            => new wp_bootstrap_navwalker()
-                ) );
-            ?>
-            </div>
-        </div><!-- /.top-bar -->
-
-        <?php endif;
+    if ( is_page_template( 'template-homepage-v5.php' ) ) {
+        $top_bar_classes = 'top-bar top-bar-v1';
+    } else {
+        $top_bar_classes = 'top-bar';
     }
+
+    if ( apply_filters( 'electro_enable_top_bar', true ) ) : ?>
+
+    <?php
+
+    if ( has_electro_mobile_header() ) {
+        if ( apply_filters( 'electro_hide_top_bar_in_mobile', true ) ) {
+            $top_bar_classes .= ' hidden-lg-down d-none d-xl-block';
+        }
+    }
+
+    ?>
+
+    <div class="<?php echo esc_attr( $top_bar_classes ); ?>">
+        <div class="container clearfix">
+            <div class="topphone">
+                <p>
+                    <i class="fa fa-phone" aria-hidden="true"></i> +44 777 888 2231 
+                    <i class="fa fa-envelope" ></i> <a href="mailto:sales@myembdesigns.com" target="_blank">sales@myembdesigns.com</a>
+                </p>
+            </div>
+        <?php
+            wp_nav_menu( array(
+                'theme_location'    => 'topbar-right',
+                'container'         => false,
+                'depth'             => 2,
+                'menu_class'        => 'nav nav-inline pull-right electro-animate-dropdown flip',
+                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                'walker'            => new wp_bootstrap_navwalker()
+            ) );
+        ?>
+        </div>
+    </div><!-- /.top-bar -->
+
+    <?php endif;
 }
+add_action( 'after_setup_theme', function() {
+    remove_action( 'electro_before_header', 'electro_top_bar', 10 );
+    add_action( 'electro_before_header', 'myemb_electro_top_bar', 10 );
+}, 20 );
 
 add_filter( 'woocommerce_show_page_title', '__return_false' );
 
@@ -462,7 +467,7 @@ function add_download_links_to_email($order, $sent_to_admin, $plain_text, $email
 add_action('wp_enqueue_scripts', function() {
     wp_enqueue_script(
         'myemb-carousel-fix',
-        '/myemb/wp-content/uploads/amazingcarousel-fix/initcarousel.js',
+        site_url( '/wp-content/uploads/amazingcarousel-fix/initcarousel.js' ),
         array(),
         '1.0',
         true

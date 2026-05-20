@@ -248,3 +248,36 @@ div#tab_background_color_picker {
 .widget_product_categories ul li > a:focus {
     color: #ffffff !important;
 }
+
+/* ============================================
+ * Carousel fixes (missing amazingcarousel JS files)
+ * ============================================ */
+.amazingcarousel-list {
+    margin-left: 0 !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+.amazingcarousel-item {
+    float: none !important;
+    margin: 4px !important;
+    text-align: center;
+}
+.amazingcarousel-item img {
+    width: 80px !important;
+    height: 80px !important;
+    object-fit: contain;
+}
+.amazingcarousel-title {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.amazingcarousel-title a {
+    color: #333;
+    text-decoration: none;
+}
+.amazingcarousel-title a:hover {
+    color: #ce1d76;
+}
