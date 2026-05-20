@@ -1,51 +1,35 @@
-# Sensitive config files
-wp-config.php
-.htaccess
-.env
+# WordPress core (should not be in repo)
+/wp-admin/
+/wp-includes/
+/wp-content/languages/
+/wp-content/upgrade/
+/wp-content/upgrade-temp-backup/
+/wp-content/cache/
 
-# WordPress uploads & generated content
-wp-content/uploads/
-wp-content/cache/
-wp-content/upgrade/
-wp-content/upgrade-temp-backup/
-wp-content/backup-db/
-wp-content/backups/
-wp-content/blogs.dir/
-wp-content/wp-cache-config.php
-wp-content/advanced-cache.php
-wp-content/object-cache.php
-wp-content/wp-rocket-config/
+# Sensitive config
+wp-config.php
 
 # Logs
 error_log
-*.log
 wp-content/error_log
+wp-admin/error_log
 wp-content/debug.log
 
-# OS files
-.DS_Store
-Thumbs.db
-desktop.ini
+# Uploads (media should not be in git, except specific fixed files)
+/wp-content/uploads/*
+!/wp-content/uploads/amazingcarousel-fix/
 
-# IDE files
+# Plugin build artifacts
+/wp-content/plugins/*/build/
+/wp-content/plugins/*/dist/
+/wp-content/plugins/*/vendor/
+/wp-content/plugins/*/assets/build/
+
+# Backups
+/wp-content/ai1wm-backups/
+
+# Misc
 .vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Node / Composer
-node_modules/
-vendor/
-composer.lock
-package-lock.json
-
-# Build files
-*.map
-dist/
-build/
-
-# Other
-*.sql
-*.tar.gz
-*.zip
+.htaccess
+wp-content/.htaccess
+wp-content/advanced-cache.php

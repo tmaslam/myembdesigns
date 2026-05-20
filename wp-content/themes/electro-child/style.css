@@ -5,7 +5,7 @@
  Author:        MadrasThemes
  Author URI:    https://madrasthemes.com/
  Template:      electro
- Version:       3.0.3
+ Version:       2.1.0
  License:       GNU General Public License v2 or later
  License URI:   http://www.gnu.org/licenses/gpl-2.0.html
  Tags:          light, dark, two-columns, right-sidebar, responsive-layout
@@ -82,43 +82,75 @@ ul.product-categories li.cat-item > a:focus {
     color: #ffffff !important;
 }
 
-/* === FIX: Logo Carousel (Amazing Carousel) === */
+/* === FIX: Events Infinite Carousel === */
+.amazingcarousel-list-container {
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    overflow: hidden !important;
+}
+.amazingcarousel-list-wrapper {
+    width: 100% !important;
+    overflow: hidden !important;
+}
 .amazingcarousel-list {
     margin-left: 0 !important;
     display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    width: 100% !important;
-    max-width: 1200px !important;
-}
-.amazingcarousel-list-wrapper,
-.amazingcarousel-list-container {
-    overflow: visible !important;
-    width: 100% !important;
+    flex-wrap: nowrap !important;
+    padding: 0 !important;
+    list-style: none !important;
+    width: max-content !important;
 }
 .amazingcarousel-item {
     float: none !important;
     flex: 0 0 auto !important;
-    margin: 10px !important;
+    width: 120px !important;
+    margin: 0 8px !important;
+    text-align: center !important;
+}
+.amazingcarousel-item-container {
+    position: relative;
+    margin: 0 2px;
 }
 .amazingcarousel-images {
     pointer-events: auto !important;
+    text-align: center;
+}
+.amazingcarousel-images a {
+    display: inline-block;
 }
 .amazingcarousel-images img {
     width: 80px !important;
     height: 80px !important;
     object-fit: contain;
+    display: inline-block;
+    border-radius: 50%;
 }
 .amazingcarousel-title {
     text-align: center;
     font-size: 12px;
-    margin-top: 5px;
+    margin-top: 8px;
+    line-height: 1.3;
+    word-wrap: break-word;
 }
 .amazingcarousel-title a {
     color: #333;
     text-decoration: none;
+    display: block;
 }
 .amazingcarousel-title a:hover {
     color: #ce1d76;
+}
+
+/* Infinite scroll animation */
+.amazingcarousel-scroll {
+    animation: amazingcarousel-scroll 40s linear infinite;
+}
+.amazingcarousel-scroll:hover {
+    animation-play-state: paused;
+}
+@keyframes amazingcarousel-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 

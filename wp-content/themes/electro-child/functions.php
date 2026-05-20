@@ -187,99 +187,57 @@ function myemb_init_tooltips() {
 }
 add_action( 'woocommerce_product_query', 'custom_pre_get_posts_query' );  */
 function vComp(){
-
-				 
-				    $terms = get_terms(
-    array(
+    $terms = get_terms( array(
         'taxonomy'   => 'events',
         'hide_empty' => false,
-    )
-);
-				    if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){ 
-				    $i=0;?>
-<div class="container" style="display:none;">
-            <div class="row blog">
-                <div class="col-md-12">
-                    <div id="blogCarousel" class="carousel slide" data-ride="carousel" style="display:none;">
+    ));
 
-                      <div class="carousel-inner carouseltabs">
-                      
-                      		
-<?php
-					 foreach ( $terms as $term ) {
-					$term_id = $term->term_id;
-				    $meta_image = get_wp_term_image($term_id);  
-				    
-				    $i++;	?>
-		<div class="signletab">
-    <div class="col-md-4">
- <a href="<?php echo get_term_link($term); ?>">
-    <h2 class="woocommerce-loop-product__title eventtile"><?php echo  $term->name; ?></h2>
-   </a>
-   </div>
-   	</div>
- <?php }  ?>
+    if ( empty( $terms ) || is_wp_error( $terms ) ) {
+        return;
+    }
 
-                      		
-                      
-                      </div>
+    // Filter terms that have images
+    $terms_with_images = array();
+    foreach ( $terms as $term ) {
+        $meta_image = get_wp_term_image( $term->term_id );
+        if ( ! empty( $meta_image ) ) {
+            $terms_with_images[] = array(
+                'term'  => $term,
+                'image' => $meta_image,
+            );
+        }
+    }
 
-                        <!-- Carousel items -->
-              
-                        <!--.carousel-inner-->
-                    </div>
-                    <!--.Carousel-->
-
+    if ( empty( $terms_with_images ) ) {
+        return;
+    }
+    ?>
+    <div id="amazingcarousel-container-16">
+        <div id="amazingcarousel-16">
+            <div class="amazingcarousel-list-container">
+                <div class="amazingcarousel-list-wrapper">
+                    <ul class="amazingcarousel-list">
+                        <?php foreach ( $terms_with_images as $index => $item ) : ?>
+                            <li class="amazingcarousel-item amazingcarousel-item-<?php echo esc_attr( $index ); ?>">
+                                <div class="amazingcarousel-item-container">
+                                    <div class="amazingcarousel-images">
+                                        <a href="<?php echo esc_url( get_term_link( $item['term'] ) ); ?>" title="<?php echo esc_attr( $item['term']->name ); ?>">
+                                            <img src="<?php echo esc_url( $item['image'] ); ?>" alt="<?php echo esc_attr( $item['term']->name ); ?>">
+                                        </a>
+                                    </div>
+                                    <div class="amazingcarousel-title">
+                                        <a href="<?php echo esc_url( get_term_link( $item['term'] ) ); ?>"><?php echo esc_html( $item['term']->name ); ?></a>
+                                    </div>
+                                </div>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
                 </div>
             </div>
-</div>
-   <?php	 } ?>
-
-
-
-          
-        <?php
-                     if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){ ?>
-    
-    <div id="amazingcarousel-container-16">
-    <div id="amazingcarousel-16" style="display: block; position: relative; width: 100%; max-width: 1200px; margin: 0px auto; direction: ltr;">
-        <div class="amazingcarousel-list-container" style="position: relative; margin: 0px auto; overflow: visible; width: 840px;">
-            <div class="amazingcarousel-list-wrapper" style="overflow: hidden; width: 840px;">
-             <ul class="amazingcarousel-list" style="display: block; position: relative; list-style-type: none; list-style-image: none; background-image: none; background-color: transparent; padding: 0px; margin: 0px 0px 0px -1563.55px; width: 3360px;">
-             
-                 <?php
-                 $i = 0;
-                  foreach ( $terms as $term ) {
-					$term_id = $term->term_id;
-				    $meta_image = get_wp_term_image($term_id);
-				    if($meta_image !=""){?>
-                <li class="amazingcarousel-item amazingcarousel-item-<?php echo $i; ?>" style="display: block; position: relative; background-image: none; background-color: transparent; margin: 0px; padding: 0px; float: left; width: 120px;">
-                <div class="amazingcarousel-item-container" style="position: relative; margin: 0px 2px;">
-					<div class="amazingcarousel-images">
-						<a href="<?php echo get_term_link($term); ?>" title="Camel" target="_blank"><img src="<?php echo $meta_image; ?>" alt="Camel" style="visibility: visible;"></a>
-				</div>
-					<div class="amazingcarousel-title"><a href="<?php echo get_term_link($term); ?>" target="_blank"><?php echo  $term->name; ?></a></div>               
-				</div>
-                </li>
-    <?php 
-    $i++;
-     }
-    } ?>
-                </ul>
-
-
-</div>
-            <div class="amazingcarousel-prev"></div>
-            <div class="amazingcarousel-next"></div>
         </div>
-        <div class="amazingcarousel-nav"></div>
     </div>
-</div>
-
-
-      <?php } ?>
-      
-<?php  }
+    <?php
+}
 add_shortcode( 'vShortcode', 'vComp' );
 
 
@@ -469,7 +427,7 @@ add_action('wp_enqueue_scripts', function() {
         'myemb-carousel-fix',
         site_url( '/wp-content/uploads/amazingcarousel-fix/initcarousel.js' ),
         array(),
-        '1.0',
+        '2.0',
         true
     );
 });

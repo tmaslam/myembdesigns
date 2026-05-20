@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $product;
-$actualprice =  $product->price;
+$actualprice =  $product->get_price();
  $price = $product->get_price_html();
 if($actualprice == "0"){
 	$pricef = "Free";
