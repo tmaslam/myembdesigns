@@ -311,6 +311,18 @@ div#tab_background_color_picker {
     color: #ce1d76;
 }
 
+/* Remove extra space before Revolution Slider */
+.revolutionslider {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+.revolutionslider .vc_empty_space {
+    display: none !important;
+}
+#rev_slider_4_1_wrapper {
+    margin-top: 0 !important;
+}
+
 /* Infinite scroll animation */
 .amazingcarousel-scroll {
     animation: amazingcarousel-scroll 40s linear infinite;
